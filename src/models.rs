@@ -37,19 +37,19 @@ pub struct ItermTheme {
     #[serde(rename = "Background Color")]
     background_color: AnsiColor,
     #[serde(rename = "Badge Color")]
-    badge_color: BadgeColor,
+    badge_color: Option<BadgeColor>,
     #[serde(rename = "Bold Color")]
     bold_color: AnsiColor,
     #[serde(rename = "Cursor Color")]
     cursor_color: AnsiColor,
     #[serde(rename = "Cursor Guide Color")]
-    cursor_guide_color: CursorGuideColor,
+    cursor_guide_color: Option<CursorGuideColor>,
     #[serde(rename = "Cursor Text Color")]
     cursor_text_color: AnsiColor,
     #[serde(rename = "Foreground Color")]
     foreground_color: AnsiColor,
     #[serde(rename = "Link Color")]
-    link_color: AnsiColor,
+    link_color: Option<AnsiColor>,
     #[serde(rename = "Selected Text Color")]
     selected_text_color: AnsiColor,
     #[serde(rename = "Selection Color")]
@@ -59,11 +59,11 @@ pub struct ItermTheme {
 #[derive(Debug, Deserialize, Serialize)]
 pub struct AnsiColor {
     #[serde(rename = "Alpha Component")]
-    alpha_component: f32,
+    alpha_component: Option<f32>,
     #[serde(rename = "Blue Component")]
     blue_component: f32,
     #[serde(rename = "Color Space")]
-    color_space: String,
+    color_space: Option<String>,
     #[serde(rename = "Green Component")]
     green_component: f32,
     #[serde(rename = "Red Component")]
@@ -84,11 +84,11 @@ impl AnsiColor {
 #[derive(Debug, Deserialize, Serialize)]
 pub struct BadgeColor {
     #[serde(rename = "Alpha Component")]
-    alpha_component: f32,
+    alpha_component: Option<f32>,
     #[serde(rename = "Blue Component")]
     blue_component: f32,
     #[serde(rename = "Color Space")]
-    color_space: String,
+    color_space: Option<String>,
     #[serde(rename = "Green Component")]
     green_component: f32,
     #[serde(rename = "Red Component")]
@@ -98,11 +98,11 @@ pub struct BadgeColor {
 #[derive(Debug, Deserialize, Serialize)]
 pub struct CursorGuideColor {
     #[serde(rename = "Alpha Component")]
-    alpha_component: f32,
+    alpha_component: Option<f32>,
     #[serde(rename = "Blue Component")]
     blue_component: f32,
     #[serde(rename = "Color Space")]
-    color_space: String,
+    color_space: Option<String>,
     #[serde(rename = "Green Component")]
     green_component: f32,
     #[serde(rename = "Red Component")]
@@ -112,11 +112,11 @@ pub struct CursorGuideColor {
 #[derive(Debug, Deserialize, Serialize)]
 pub struct SelectionColor {
     #[serde(rename = "Alpha Component")]
-    alpha_component: f32,
+    alpha_component: Option<f32>,
     #[serde(rename = "Blue Component")]
     blue_component: f32,
     #[serde(rename = "Color Space")]
-    color_space: String,
+    color_space: Option<String>,
     #[serde(rename = "Green Component")]
     green_component: f32,
     #[serde(rename = "Red Component")]

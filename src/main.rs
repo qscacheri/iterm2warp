@@ -11,7 +11,8 @@ fn main() {
         let iterm_theme: Result<ItermTheme, _> = plist::from_file(first_arg);
         let iterm_theme = match iterm_theme {
             Ok(theme) => theme,
-            Err(_) => {
+            Err(err) => {
+                eprintln!("{:?}", err);
                 eprintln!("Unable to read file");
                 process::exit(1);
             }
